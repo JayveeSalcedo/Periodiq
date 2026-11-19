@@ -1,0 +1,787 @@
+{
+ "compounds": [
+  {
+   "id": "h2",
+   "name": "Hydrogen gas",
+   "formula": "H₂",
+   "bondType": "covalent",
+   "description": "Lightest gas; used as rocket fuel.",
+   "atoms": [
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.37,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.37,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "o2",
+   "name": "Oxygen gas",
+   "formula": "O₂",
+   "bondType": "covalent",
+   "description": "The oxygen we breathe.",
+   "atoms": [
+    {
+     "symbol": "O",
+     "position": {
+      "x": -0.6,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": 0.6,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 2
+    }
+   ]
+  },
+  {
+   "id": "n2",
+   "name": "Nitrogen gas",
+   "formula": "N₂",
+   "bondType": "covalent",
+   "description": "Makes up about 78% of air.",
+   "atoms": [
+    {
+     "symbol": "N",
+     "position": {
+      "x": -0.55,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "N",
+     "position": {
+      "x": 0.55,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 3
+    }
+   ]
+  },
+  {
+   "id": "cl2",
+   "name": "Chlorine gas",
+   "formula": "Cl₂",
+   "bondType": "covalent",
+   "description": "Used to disinfect pool water.",
+   "atoms": [
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": -1.0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 1.0,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "h2o",
+   "name": "Water",
+   "formula": "H₂O",
+   "bondType": "covalent",
+   "description": "Covers about 71% of Earth's surface.",
+   "atoms": [
+    {
+     "symbol": "O",
+     "position": {
+      "x": 0,
+      "y": 0.12,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.76,
+      "y": -0.47,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.76,
+      "y": -0.47,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "co2",
+   "name": "Carbon dioxide",
+   "formula": "CO₂",
+   "bondType": "covalent",
+   "description": "The gas we breathe out; plants use it.",
+   "atoms": [
+    {
+     "symbol": "C",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": -1.16,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": 1.16,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 2
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 2
+    }
+   ]
+  },
+  {
+   "id": "co",
+   "name": "Carbon monoxide",
+   "formula": "CO",
+   "bondType": "covalent",
+   "description": "Colourless, poisonous gas from incomplete burning.",
+   "atoms": [
+    {
+     "symbol": "C",
+     "position": {
+      "x": -0.56,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": 0.56,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 3
+    }
+   ]
+  },
+  {
+   "id": "ch4",
+   "name": "Methane",
+   "formula": "CH₄",
+   "bondType": "covalent",
+   "description": "Main part of natural gas used for cooking.",
+   "atoms": [
+    {
+     "symbol": "C",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.629,
+      "y": 0.629,
+      "z": 0.629
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.629,
+      "y": -0.629,
+      "z": 0.629
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.629,
+      "y": 0.629,
+      "z": -0.629
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.629,
+      "y": -0.629,
+      "z": -0.629
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 3,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 4,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "nh3",
+   "name": "Ammonia",
+   "formula": "NH₃",
+   "bondType": "covalent",
+   "description": "Used to make fertilisers.",
+   "atoms": [
+    {
+     "symbol": "N",
+     "position": {
+      "x": 0,
+      "y": 0.12,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.94,
+      "y": -0.27,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.47,
+      "y": -0.27,
+      "z": 0.81
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.47,
+      "y": -0.27,
+      "z": -0.81
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 3,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "hcl",
+   "name": "Hydrogen chloride",
+   "formula": "HCl",
+   "bondType": "covalent",
+   "description": "Dissolved in water it becomes hydrochloric acid, found in your stomach.",
+   "atoms": [
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.64,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 0.64,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "hf",
+   "name": "Hydrogen fluoride",
+   "formula": "HF",
+   "bondType": "covalent",
+   "description": "Strong enough to etch glass.",
+   "atoms": [
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.46,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "F",
+     "position": {
+      "x": 0.46,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "h2s",
+   "name": "Hydrogen sulfide",
+   "formula": "H₂S",
+   "bondType": "covalent",
+   "description": "Gives rotten eggs their smell.",
+   "atoms": [
+    {
+     "symbol": "S",
+     "position": {
+      "x": 0,
+      "y": 0.12,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": -0.96,
+      "y": -0.83,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "H",
+     "position": {
+      "x": 0.96,
+      "y": -0.83,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 1
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 1
+    }
+   ]
+  },
+  {
+   "id": "nacl",
+   "name": "Sodium chloride",
+   "formula": "NaCl",
+   "bondType": "ionic",
+   "description": "Table salt.",
+   "atoms": [
+    {
+     "symbol": "Na",
+     "position": {
+      "x": -1.2,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 1.2,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "kcl",
+   "name": "Potassium chloride",
+   "formula": "KCl",
+   "bondType": "ionic",
+   "description": "Used as a salt substitute and fertiliser.",
+   "atoms": [
+    {
+     "symbol": "K",
+     "position": {
+      "x": -1.4,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 1.4,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "lif",
+   "name": "Lithium fluoride",
+   "formula": "LiF",
+   "bondType": "ionic",
+   "description": "Used in special optics and nuclear reactors.",
+   "atoms": [
+    {
+     "symbol": "Li",
+     "position": {
+      "x": -0.9,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "F",
+     "position": {
+      "x": 0.9,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "mgo",
+   "name": "Magnesium oxide",
+   "formula": "MgO",
+   "bondType": "ionic",
+   "description": "Used in antacids and heat-resistant bricks.",
+   "atoms": [
+    {
+     "symbol": "Mg",
+     "position": {
+      "x": -1.05,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": 1.05,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "cao",
+   "name": "Calcium oxide",
+   "formula": "CaO",
+   "bondType": "ionic",
+   "description": "Quicklime, used to make cement.",
+   "atoms": [
+    {
+     "symbol": "Ca",
+     "position": {
+      "x": -1.2,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "O",
+     "position": {
+      "x": 1.2,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "mgcl2",
+   "name": "Magnesium chloride",
+   "formula": "MgCl₂",
+   "bondType": "ionic",
+   "description": "Used to melt ice on roads.",
+   "atoms": [
+    {
+     "symbol": "Mg",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": -2.1,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 2.1,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "cacl2",
+   "name": "Calcium chloride",
+   "formula": "CaCl₂",
+   "bondType": "ionic",
+   "description": "Absorbs moisture; used as a drying agent.",
+   "atoms": [
+    {
+     "symbol": "Ca",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": -2.3,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Cl",
+     "position": {
+      "x": 2.3,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "na2o",
+   "name": "Sodium oxide",
+   "formula": "Na₂O",
+   "bondType": "ionic",
+   "description": "Used in making glass.",
+   "atoms": [
+    {
+     "symbol": "O",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Na",
+     "position": {
+      "x": -2.0,
+      "y": 0,
+      "z": 0
+     }
+    },
+    {
+     "symbol": "Na",
+     "position": {
+      "x": 2.0,
+      "y": 0,
+      "z": 0
+     }
+    }
+   ],
+   "bonds": [
+    {
+     "a": 0,
+     "b": 1,
+     "order": 0
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "order": 0
+    }
+   ]
+  }
+ ]
+}

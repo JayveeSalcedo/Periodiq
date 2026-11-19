@@ -91,6 +91,7 @@ namespace Periodiq.Interaction
             var atom = hit.collider.GetComponentInParent<Atom>();
             if (atom != null)
             {
+                if (atom.Locked) return;
                 Hold(atom, t, Vector3.Distance(_cam.transform.position, atom.transform.position));
                 return;
             }

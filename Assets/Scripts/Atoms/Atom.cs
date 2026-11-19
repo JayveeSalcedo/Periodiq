@@ -20,6 +20,9 @@ namespace Periodiq.Atoms
 
         Vector3 _restPosition;
         bool _resting;
+
+        /// <summary>Set while a reaction is consuming this atom: can't be grabbed, stops animating.</summary>
+        public bool Locked { get; set; }
         float _bobPhase;
         float _popT;
         Vector3 _targetScale;
@@ -48,6 +51,8 @@ namespace Periodiq.Atoms
 
         void Update()
         {
+            if (Locked) return;
+
             // Pop-out: overshoot ease (back-out) from 0 to full size.
             if (_popT < 1f)
             {

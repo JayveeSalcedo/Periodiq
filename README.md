@@ -13,7 +13,7 @@ A mobile AR chemistry learning app. Place a 3D periodic table in your room, grab
 |---|---------|--------|
 | 1 | Element data + AR table placement | ✅ Code ready, needs on-device test |
 | 2 | Grab a tile → 3D atom pops out | ✅ Code ready, needs on-device test |
-| 3 | Reaction zone + compound recipes | ⏳ |
+| 3 | Reaction zone + compound recipes | ✅ Code ready, needs on-device test |
 | 4 | Compound info card + wrong-combo explanations | ⏳ |
 | 5 | Discovery Book | ⏳ |
 | 6 | Bondable-element glow + atom inspect | ⏳ |

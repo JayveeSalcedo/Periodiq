@@ -1,5 +1,7 @@
 # Periodiq
 
+[![Build Android](https://github.com/JayveeSalcedo/periodiq/actions/workflows/build-android.yml/badge.svg)](https://github.com/JayveeSalcedo/periodiq/actions/workflows/build-android.yml)
+
 A mobile AR chemistry learning app. Place a 3D periodic table in your room, grab elements out of it, and combine them to build molecules.
 
 - **Engine:** Unity 6 + AR Foundation (ARCore)
@@ -19,7 +21,7 @@ A mobile AR chemistry learning app. Place a 3D periodic table in your room, grab
 | 8 | Bond animations, sound, UI polish | ⏳ |
 | 9 | Non-AR fallback mode | ⏳ |
 
-Setup steps per feature are in [`Docs/`](Docs/).
+Setup steps per feature are in [`Docs/`](Docs/). CI build setup: [`Docs/CI-Build.md`](Docs/CI-Build.md).
 
 ## Data
 

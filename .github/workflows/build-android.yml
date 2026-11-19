@@ -1,0 +1,82 @@
+name: Build Android
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: build-android-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write   # needed to attach the APK to a GitHub Release on tags
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # semantic versioning reads git history
+          lfs: true
+
+      - name: Check Unity project exists
+        id: project
+        run: |
+          if [ -f ProjectSettings/ProjectVersion.txt ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+            echo "Unity version: $(grep m_EditorVersion: ProjectSettings/ProjectVersion.txt)"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No ProjectSettings/ProjectVersion.txt yet. Create the Unity project in the repo root and commit Packages/ + ProjectSettings/. Skipping build."
+          fi
+
+      - name: Free disk space (Android builds are large)
+        if: steps.project.outputs.ok == 'true'
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          android: false
+          large-packages: false
+
+      - name: Cache Library
+        if: steps.project.outputs.ok == 'true'
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Android-
+
+      - name: Build
+        if: steps.project.outputs.ok == 'true'
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: Android
+          buildName: Periodiq
+          versioning: Semantic
+          androidExportType: androidPackage   # .apk for sideloading; use androidAppBundle for Play Store
+
+      - name: Upload APK
+        if: steps.project.outputs.ok == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Periodiq-Android-${{ github.sha }}
+          path: build/Android/*.apk
+          retention-days: 14
+
+      - name: Attach APK to release
+        if: steps.project.outputs.ok == 'true' && startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/Android/*.apk

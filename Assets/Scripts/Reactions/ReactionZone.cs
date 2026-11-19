@@ -82,9 +82,10 @@ namespace Periodiq.Reactions
             {
                 StartCoroutine(React(match, _inside.ToList()));
             }
-            else if (_inside.Count >= 2 && !moreLikely)
+            else if (_inside.Count >= 2)
             {
-                _flash = 1f;
+                // "Almost there" cases (H + O) get a hint but no red flash.
+                if (!moreLikely) _flash = 1f;
                 ReactionFailed?.Invoke(_inside.Select(a => a.Element).ToList());
             }
         }

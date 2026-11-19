@@ -1,7 +1,9 @@
 using Periodiq.AR;
 using Periodiq.Atoms;
 using Periodiq.Table;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
@@ -84,6 +86,8 @@ namespace Periodiq.Interaction
 
         void TryGrab(Touch t)
         {
+            if (IsOverUI(t.screenPosition)) return;
+
             var ray = _cam.ScreenPointToRay(t.screenPosition);
             if (!Physics.Raycast(ray, out var hit, 10f)) return;
 
@@ -109,6 +113,19 @@ namespace Periodiq.Interaction
 #if UNITY_ANDROID || UNITY_IOS
             Handheld.Vibrate();
 #endif
+        }
+
+        static readonly List<RaycastResult> UiHits = new();
+
+        /// <summary>True if the touch is on a UI element (e.g. the info card), so we don't grab through it.</summary>
+        static bool IsOverUI(Vector2 screenPos)
+        {
+            var es = EventSystem.current;
+            if (es == null) return false;
+            var data = new PointerEventData(es) { position = screenPos };
+            UiHits.Clear();
+            es.RaycastAll(data, UiHits);
+            return UiHits.Count > 0;
         }
 
         void Hold(Atom atom, Touch t, float distance)

@@ -24,6 +24,8 @@ namespace Periodiq.AR
         static readonly List<ARRaycastHit> Hits = new();
 
         public bool IsPlaced { get; private set; }
+        /// <summary>Frame the table was placed on, so the placing tap isn't also read as a grab.</summary>
+        public int PlacedFrame { get; private set; } = -1;
 
         void Awake()
         {
@@ -67,6 +69,7 @@ namespace Periodiq.AR
             tableRoot.transform.SetPositionAndRotation(pose.position, rot);
             tableRoot.SetActive(true);
             IsPlaced = true;
+            PlacedFrame = Time.frameCount;
             if (reticle) reticle.gameObject.SetActive(false);
 
             if (hidePlanesAfterPlacing && _planes)

@@ -91,6 +91,14 @@ namespace Periodiq.Interaction
             var ray = _cam.ScreenPointToRay(t.screenPosition);
             if (!Physics.Raycast(ray, out var hit, 10f)) return;
 
+            // Tappable objects (e.g. the closed Discovery Book).
+            var tappable = hit.collider.GetComponentInParent<ITappable>();
+            if (tappable != null)
+            {
+                tappable.OnTap();
+                return;
+            }
+
             // Existing atom?
             var atom = hit.collider.GetComponentInParent<Atom>();
             if (atom != null)

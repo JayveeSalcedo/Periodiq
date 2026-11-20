@@ -121,11 +121,7 @@ namespace Periodiq.Reactions
             }
             foreach (var a in atoms) Destroy(a.gameObject);
 
-            if (_current) _current.Dismiss();
-            var cam = Camera.main.transform;
-            var toCam = cam.position - target; toCam.y = 0f;
-            var rot = toCam.sqrMagnitude > 0.0001f ? Quaternion.LookRotation(-toCam) : Quaternion.identity;
-            _current = moleculeFactory.Create(compound, target, rot);
+            ShowMolecule(compound);
 
 #if UNITY_ANDROID || UNITY_IOS
             Handheld.Vibrate();
@@ -134,6 +130,21 @@ namespace Periodiq.Reactions
 
             _signature = "";
             _busy = false;
+        }
+
+        /// <summary>
+        /// Puts a molecule in the zone without a reaction (used by the Discovery Book).
+        /// Replaces any molecule already there. Does not fire <see cref="CompoundFormed"/>.
+        /// </summary>
+        public Molecule ShowMolecule(CompoundData compound)
+        {
+            var target = transform.position + Vector3.up * moleculeHeight;
+            if (_current) _current.Dismiss();
+            var cam = Camera.main.transform;
+            var toCam = cam.position - target; toCam.y = 0f;
+            var rot = toCam.sqrMagnitude > 0.0001f ? Quaternion.LookRotation(-toCam) : Quaternion.identity;
+            _current = moleculeFactory.Create(compound, target, rot);
+            return _current;
         }
 
         // ---------- Visual ----------
